@@ -54,6 +54,7 @@ MIDDLEWARE = [
 
 CRON_CLASSES = [
     "currency.management.cron.UpdateRate",
+    # "django_cron.cron.FailedRunsNotificationCronJob",
 ]
 
 ROOT_URLCONF = "currency_rate.urls"
