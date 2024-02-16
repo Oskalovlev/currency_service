@@ -19,8 +19,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = False
-DEBUG = True
+# DEBUG = True
+DEBUG = False
+
 
 ALLOWED_HOSTS = ["*"]
 
@@ -86,6 +87,17 @@ DATABASES = {
         "NAME": str(BASE_DIR / "db.sqlite3"),
     }
 }
+
+# DATABASES = {
+#     "default": {
+#         "ENGINE": os.getenv("DB_ENGINE", default=""),
+#         "NAME": os.getenv("DB_NAME", default=""),
+#         "USER": os.getenv("DB_USER", default=""),
+#         "PASSWORD": os.getenv("DB_PASSWORD", default=""),
+#         "HOST": os.getenv("DB_HOST", default=""),
+#         "PORT": os.getenv("DB_PORT", default=""),
+#     }
+# }
 
 
 # Password validation

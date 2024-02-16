@@ -5,12 +5,12 @@
 ### Сервис который отображает курс валюты по отношению к рублю на заданную дату
 
 #### Выводит данные при обращении по адресу в виде:
-    http://localhost:8000/rate/?charcode=AUD&date=2024-01-01
+    http://localhost:8000/rate/?charcode=BYN&date=2024-02-15
 #### Результат в виде JSON в формате:
     {
-    "charcode": "AUD",
-    "date": "2024-01-01",
-    "rate": 57.0627
+    "charcode": "BYN",
+    "date": "2024-02-15",
+    "rate": 28.417
     }
 
 
@@ -56,14 +56,16 @@ rate/  # Курс валюты
     cd currency_service/
     ```
 ---
-2. *Для работы с PostgreSQL* или MySQL*:
+2. *Для работы с PostgreSQL* или MySQL* (По умолчаню используется SQLite):
 
-    * Создайте в директории `infra/` файл `.env` командой:
+    * Создайте в корневой директории проекта файл `.env` командой:
 
         ```sh
-        touch infra/.env
+        touch .env
         ```
         > Заполните переменные по примеру файла `.env.example`
+
+    * В settings.py шлавного каталога приложения оставлен шаблон
 ---
 3. *Создайте и активируйте виртуальное окружение*:
 
@@ -86,7 +88,7 @@ rate/  # Курс валюты
     python -m pip install --upgrade pip
     ```
     ```sh
-    pip install -r backend/requirements.txt
+    pip install -r requirements.txt
     ```
 </details>
 
@@ -128,9 +130,9 @@ rate/  # Курс валюты
 
 ---
 
-3. *Соберите статику*:
+3. *Запустить Cron*:
     ```sh
-    python currency_rate/manage.py collectstatic --noinput
+    python currency_rate/manage.py runcrons
     ```
 ---
 4. *Локальный запуск*:

@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from django.db import models
 from django.utils import timezone
 from requests import get
@@ -13,6 +15,6 @@ class CurrencyManager(models.Manager):
         for currency in data["Valute"].values():
             Currency.objects.get_or_create(
                 charcode=currency["CharCode"],
-                date=timezone.now(),
+                date=datetime.now(),
                 rate=currency["Value"],
             )
