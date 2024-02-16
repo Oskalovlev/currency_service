@@ -1,12 +1,12 @@
 # Currency Service
-## Сервис курса валют
+### Сервис курса валют
 
-## Описание проекта
-### Сервис который отображает курс валюты по отношению к рублю на заданную дату
+### Описание проекта
+#### Сервис который отображает курс валюты по отношению к рублю на заданную дату
 
-#### Выводит данные при обращении по адресу в виде:
+##### Выводит данные при обращении по адресу в виде:
     http://localhost:8000/rate/?charcode=BYN&date=2024-02-15
-#### Результат в виде JSON в формате:
+##### Результат в виде JSON в формате:
     {
     "charcode": "BYN",
     "date": "2024-02-15",
@@ -14,13 +14,14 @@
     }
 
 
-Данные по валютам храниться в базе данных приложения.
+Данные по валютам хранятся в базе данных приложения.
 А для пополнения этой базы данных написана команда, которая
 будет раз в сутки обращаться к сервису ЦБ за актуальными курсами валют по адресу:
     https://www.cbr-xml-daily.ru/daily_json.js
 
 ## Стек технологий
-![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![Django](https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white) ![DjangoREST](https://img.shields.io/badge/DJANGO-REST-ff1709?style=for-the-badge&logo=django&logoColor=white&color=ff1709&labelColor=gray) 
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![Django](https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white)
 
 ---
 
@@ -45,8 +46,6 @@ rate/  # Курс валюты
 
 <details><summary><h2>Подготовка проекта к запуску</h2></summary>
 
-#### `3` пункт для локального запуска. `4` пункт для ведения разработки
-
 1. *Склонируйте репозиторий и перейдите в него*:
 
     ```sh
@@ -65,7 +64,7 @@ rate/  # Курс валюты
         ```
         > Заполните переменные по примеру файла `.env.example`
 
-    * В settings.py шлавного каталога приложения оставлен шаблон
+    * В settings.py главного каталога приложения оставлен шаблон
 ---
 3. *Создайте и активируйте виртуальное окружение*:
 
